@@ -1,0 +1,91 @@
+{% include 'movies/head.html' %}
+{% load static %}
+{% load static i18n %}
+<body>
+
+<div id="page" class="page">
+    <div class="main-banner inner bg bg1" id="home">
+        <!-- header -->
+        {% include 'movies/header.html' %}
+    </div>
+    <!--//main-content-->
+    <!---->
+    <ol class="breadcrumb editContent">
+        <li class="breadcrumb-item">
+            <a href="{% url 'movies:index' %}" class="editContent"
+               >Home</a>
+        </li>
+        <li class="breadcrumb-item active editContent" style="outline: none; cursor: inherit;">
+            {{ actors.name }}
+        </li>
+    </ol>
+    <!---->
+    <!-- banner -->
+    <section class="ab-info-main py-md-5 py-4 editContent"
+             style="outline: none; outline-offset: -2px; cursor: inherit; color: rgb(33, 37, 41); font-size: 16px; background-color: rgba(0, 0, 0, 0); font-family: Lato, sans-serif;">
+        <div class="container py-md-3">
+            <!-- top Products -->
+            <div class="row">
+                <!-- product left -->
+
+                <!-- //product left -->
+                <!-- product right -->
+                    <div class="left-ads-display col-lg-8">
+        <div class="row">
+            <div class="desc1-left col-md-6">
+                <img src="{{ actors.image.url }}" class="img-fluid" alt="">
+            </div>
+            <div class="desc1-right col-md-6 pl-lg-4">
+                <h5 class="editContent"></h5>
+                <ul>
+                    <li>
+                        <span><b>{% trans "Имя" %}:</b> {{ actors.name }}</span></li>
+                    <li>
+                        <span><b>{% trans "Возраст" %}:</b> {{ actors.age }}</span></li>
+                    {% if actors.film_director.all %}
+                        <li>
+                            <span><b>{% trans "Режиссер" %}:</b>
+                                {% for movie in actors.film_director.all %}
+                                    <a href="{% url 'movies:movie_detail' movie.url %}">{{ movie.title }}</a>
+                                    {% if not forloop.last %},{% endif %}
+                                {% endfor %}
+                            </span>
+                        </li>
+                    {% endif %}
+                    {% if actors.film_actor.all %}
+                    <li><span><b>{% trans "Актер" %}:</b>
+                        {% for movie in actors.film_actor.all %}
+                        <a href="{% url 'movies:movie_detail' movie.url %}">{{ movie.title }}</a>
+                        {% if not forloop.last %},{% endif %}
+                        {% endfor %}
+                    </span>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        <div class="row sub-para-w3layouts mt-5">
+            <h3 class="shop-sing editContent">
+                {% trans "О" %} {{ actors.name }}
+            </h3>
+            <p class="editContent">
+                {{ actors.description|safe }}
+            </p>
+        </div>
+    </div>
+                    <script>
+                        function addReview(name, id) {
+                        document.getElementById("contactparent").value = id;
+                        document.getElementById("contactcomment").innerText = `${name}, `
+                    }
+
+                    </script>
+            </div>
+        </div>
+    </section>
+    <!-- //contact -->
+    <!-- footer -->
+    {% include 'movies/footer.html' %}
+    <!-- //footer -->
+</div>
+</body>

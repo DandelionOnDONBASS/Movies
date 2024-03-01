@@ -1,0 +1,1 @@
+[{"model": "movies.category", "pk": 1, "fields": {"name": "Фильмы", "description": "Все фильмы мира", "url": "movie"}}, {"model": "movies.category", "pk": 2, "fields": {"name": "Сериалы", "description": "Сериалы", "url": "seriales"}}, {"model": "movies.category", "pk": 3, "fields": {"name": "Мультфильмы", "description": "мультфильмы", "url": "mult"}}]

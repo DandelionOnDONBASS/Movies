@@ -1,0 +1,85 @@
+{% include 'movies/head.html' %}
+{% load static %}
+{% load movie_tags %}
+<body>
+
+    <div id="page" class="page"><!-- mian-content -->
+    <div class="main-banner inner bg bg1" id="home">            <!-- header -->
+            {% include 'movies/header.html' %}
+            <!-- //header -->
+            <!--/banner-->
+            <div class="banner-info">
+                <h3 class="mb-4 editContent">Все о кино</h3>
+                <div class="ban-buttons">
+
+
+                </div>
+            </div>
+            <!--// banner-inner -->
+
+        </div>
+        <!--//main-content-->
+        <!---->
+        <ol class="breadcrumb editContent">
+            <li class="breadcrumb-item">
+                <a href="{% url 'movies:index' %}" class="editContent">Home</a>
+            </li>
+
+        </ol>
+        <!---->
+        <!-- banner -->
+        <section class="ab-info-main py-md-5 py-4 editContent" style="padding-left: 3rem; padding-right: 3rem;">
+            <div class="container-fluid py-md-3">
+                <div class="row">
+                    {% include 'movies/side-bar.html' %}
+                    <!-- //product left -->
+                    <!-- product right -->
+                    <div class="left-ads-display col-lg-9">
+                        <div class="row">
+                            {% for movie in movie_list %}
+                            <div class="col-md-4 product-men">
+                                <div class="product-shoe-info editContent text-center mt-lg-4" >
+                                    <div class="men-thumb-item">
+
+                                        <a href="{% url 'movies:movie_detail' movie.url %}"><img src="{{ movie.poster.url }}" class="img-fluid" alt=""></a>
+                                    </div>
+                                    <div class="item-info-product">
+                                        <h4 class="">
+                                            <a href="{% url 'movies:movie_detail' movie.url %}" class="editContent" >{{ movie.title }}</a>
+                                        </h4>
+
+                                        <div class="product_price">
+                                            <div class="grid-price">
+                                                <span class="money editContent" >{{ movie.tagline }}</span>
+                                            </div>
+                                        </div>
+                                        <ul class="stars">
+                                            <li><a href="#"><span class="fa fa-star" aria-hidden="true" ></span></a></li>
+                                            <li><a href="#"><span class="fa fa-star" aria-hidden="true" ></span></a></li>
+                                            <li><a href="#"><span class="fa fa-star-half-o" aria-hidden="true" ></span></a></li>
+                                            <li><a href="#"><span class="fa fa-star-half-o" aria-hidden="true" ></span></a></li>
+                                            <li><a href="#"><span class="fa fa-star-o" aria-hidden="true" ></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+                 {% include 'movies/pagination.html' %}
+        </section>
+
+        <!-- //contact -->
+        <!-- footer -->
+        {% include 'movies/footer.html' %}
+        <!-- //footer -->
+        </div>
+</body>
+<script src="{% static 'js/script.js' %}"></script>
+
+
+</html>

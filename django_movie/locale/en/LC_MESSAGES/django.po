@@ -1,0 +1,186 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-22 21:19+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: templates/movies/actor.html:42 templates/movies/movie_detail.html:159
+msgid "Имя"
+msgstr "Name"
+
+#: templates/movies/actor.html:44
+msgid "Возраст"
+msgstr "Age"
+
+#: templates/movies/actor.html:47 templates/movies/movie_detail.html:48
+msgid "Режиссер"
+msgstr "Director"
+
+#: templates/movies/actor.html:56
+msgid "Актер"
+msgstr "Actor"
+
+#: templates/movies/actor.html:69
+msgid "О"
+msgstr "About"
+
+#: templates/movies/deals.html:4
+msgid "Последние добавленные"
+msgstr "Last added"
+
+#: templates/movies/header.html:34
+msgid "Выход"
+msgstr "Exit"
+
+#: templates/movies/header.html:36
+msgid "Вход"
+msgstr "Login"
+
+#: templates/movies/movie_detail.html:17
+msgid "Дом"
+msgstr "Home"
+
+#: templates/movies/movie_detail.html:42 templates/movies/side-bar.html:32
+msgid "Год"
+msgstr "Year"
+
+#: templates/movies/movie_detail.html:43
+msgid "Страна"
+msgstr "Country"
+
+#: templates/movies/movie_detail.html:45
+msgid "Слоган"
+msgstr "Slogan"
+
+#: templates/movies/movie_detail.html:53
+msgid "Актеры"
+msgstr "Actors"
+
+#: templates/movies/movie_detail.html:58
+msgid "Жанр"
+msgstr "Genre"
+
+#: templates/movies/movie_detail.html:64
+msgid "Премьера в мире"
+msgstr "World premiere"
+
+#: templates/movies/movie_detail.html:67
+msgid "Бюджет"
+msgstr "Budget"
+
+#: templates/movies/movie_detail.html:69
+msgid "Сборы в США"
+msgstr "Taxes in the USA"
+
+#: templates/movies/movie_detail.html:70
+msgid "Сборы в мире"
+msgstr "Taxes in the world"
+
+#: templates/movies/movie_detail.html:74 templates/movies/side-bar.html:49
+msgid "Рейтинг"
+msgstr "Rating"
+
+#: templates/movies/movie_detail.html:124
+msgid "О фильме"
+msgstr "About the film"
+
+#: templates/movies/movie_detail.html:144
+msgid "Оставить отзыв"
+msgstr "Leave a review"
+
+#: templates/movies/movie_detail.html:152
+msgid "Ваш комментарий"
+msgstr "Your comment"
+
+#: templates/movies/movie_detail.html:172
+msgid "Отправить"
+msgstr "Submit"
+
+#: templates/movies/movie_detail.html:190
+msgid "Ответить"
+msgstr "Reply"
+
+#: templates/movies/side-bar.html:6
+msgid "Поиск фильма"
+msgstr "Movie Search"
+
+#: templates/movies/side-bar.html:16
+msgid "Жанры"
+msgstr "Genres"
+
+#: templates/movies/side-bar.html:43
+msgid "Найти"
+msgstr "Find"
+
+#: users/templates/users/email_verification.html:8
+msgid "Учетная запись подтверждена"
+msgstr "Account verified"
+
+#: users/templates/users/email_verification.html:26
+msgid "Поздравляем"
+msgstr "Congratulations"
+
+#: users/templates/users/email_verification.html:27
+msgid "Ваша учетная запись успешно подтверждена!"
+msgstr "Your account has been successfully verified!"
+
+#: users/templates/users/email_verification.html:28
+msgid "Продолжить"
+msgstr "Continue"
+
+#: users/templates/users/login.html:8
+msgid "Авторизация"
+msgstr "Authorization"
+
+#: users/templates/users/login.html:58 users/templates/users/login.html:77
+msgid "Войти"
+msgstr "Login"
+
+#: users/templates/users/login.html:70 users/templates/users/register.html:61
+msgid "Логин"
+msgstr "Login"
+
+#: users/templates/users/login.html:74 users/templates/users/register.html:69
+msgid "Пароль"
+msgstr "Password"
+
+#: users/templates/users/login.html:80
+msgid "Войти через Google"
+msgstr "Sign in with Google"
+
+#: users/templates/users/login.html:85
+msgid "На главную"
+msgstr "Home"
+
+#: users/templates/users/login.html:86
+msgid "Нужен аккаунт? Зарегистрируйся!"
+msgstr "Need an account? Register!"
+
+#: users/templates/users/register.html:49
+msgid "Регистрация"
+msgstr "Registration"
+
+#: users/templates/users/register.html:73
+msgid "Подтверждение пароля"
+msgstr "Confirm password"
+
+#: users/templates/users/register.html:76
+msgid "Зарегистрироваться"
+msgstr "Register"
+
+#: users/templates/users/register.html:78
+msgid "Назад"
+msgstr "Back"

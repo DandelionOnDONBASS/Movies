@@ -1,0 +1,86 @@
+{% load socialaccount %}
+{% load static i18n %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: "Roboto", sans-serif;
+      margin-top: 50px;  /* Добавлено для отступа от верха страницы */
+    }
+
+    .card {
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+      background-color: #f7f7f7;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .card-title {
+      font-weight: 500;
+    }
+
+    .form-control {
+      border-radius: 5px;
+    }
+
+    .btn-primary {
+      background-color: #4285f4;
+      border-radius: 5px;
+      margin-top: 10px;  /* Добавлено для отступа между кнопками */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="row justify-content-center my-5">  <!-- Добавлено для вертикального центрирования и отступа от верха и нижней части страницы -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"{% trans "Регистрация" %}></h3>
+          </div>
+          <div class="card-body">
+            {% if form.errors %}
+                            <div  role="alert"
+                                 style="margin-top: 50px;">
+                                {{ form.errors }}
+                            </div>
+                        {% endif %}
+            <form action="{% url 'users:register' %}" method="post">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="username">{% trans "Логин" %}:</label>
+                {{ form.username }}
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                {{ form.email }}
+              </div>
+              <div class="form-group">
+                <label for="password1">{% trans "Пароль" %}:</label>
+                {{ form.password1 }}
+              </div>
+              <div class="form-group">
+                <label for="password2">{% trans "Подтверждение пароля" %}:</label>
+                {{ form.password2 }}
+              </div>
+              <button type="submit" class="btn btn-primary">{% trans "Зарегистрироваться" %}</button>
+            </form>
+            <a href="{% url 'users:login' %}" class="btn btn-primary">{% trans "Назад" %}</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

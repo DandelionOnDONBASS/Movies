@@ -1,0 +1,51 @@
+
+            <div class="pagination-container">
+                        {% if 'search' in request.path %}
+                            {% if is_paginated %}
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item {% if not page_obj.has_previous %} disabled {% endif %}">
+                                            <a class="page-link" href={% if page_obj.has_previous %} {%url 'movies:search' page_obj.previous_page_number %}?{{ request.GET.urlencode }} {% else %} # {% endif %} tabindex="-1" aria-disabled="true">Previous</a>
+                                        </li>
+                                        {% for page in paginator.page_range %}
+                                            <li class="page-item"><a class="page-link" href={% url 'movies:search' page %}?{{ request.GET.urlencode }}>{{ page }}</a></li>
+                                        {% endfor %}
+                                        <li class="page-item {% if not page_obj.has_next %} disabled {% endif %} ">
+                                            <a class="page-link" href={% if page_obj.has_next %} {% url 'movies:search' page_obj.next_page_number %}?{{ request.GET.urlencode }} {% else %}?{{ request.GET.urlencode }} # {% endif %}>Next</a>                                        </li>
+                                    </ul>
+                                </nav>
+                            {% endif %}
+                        {% elif 'filter' in request.path %}
+                            {% if is_paginated %}
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item {% if not page_obj.has_previous %} disabled {% endif %}">
+                                            <a class="page-link" href={% if page_obj.has_previous %} {% url 'movies:filter' page_obj.previous_page_number %}?{{ request.GET.urlencode }} {% else %} # {% endif %} tabindex="-1" aria-disabled="true">Previous</a>
+                                        </li>
+                                        {% for page in paginator.page_range %}
+                                            <li class="page-item"><a class="page-link" href={% url 'movies:filter' page %}?{{ request.GET.urlencode }}>{{ page }}</a></li>
+                                        {% endfor %}
+                                        <li class="page-item {% if not page_obj.has_next %} disabled {% endif %} ">
+                                        <a class="page-link" href={% if page_obj.has_next %} {% url 'movies:filter' page_obj.next_page_number %}?{{ request.GET.urlencode }} {% else %}?{{ request.GET.urlencode }} # {% endif %}>Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            {% endif %}
+                        {% else %}
+                            {% if is_paginated %}
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item {% if not page_obj.has_previous %} disabled {% endif %}">
+                                            <a class="page-link" href={% if page_obj.has_previous %} {% url 'movies:paginator' page_obj.previous_page_number %} {% else %} # {% endif %} tabindex="-1" aria-disabled="true">Previous</a>
+                                        </li>
+                                        {% for page in paginator.page_range %}
+                                            <li class="page-item"><a class="page-link" href={% url 'movies:paginator' page %}>{{ page }}</a></li>
+                                        {% endfor %}
+                                        <li class="page-item {% if not page_obj.has_next %} disabled {% endif %} ">
+                                        <a class="page-link" href={% if page_obj.has_next %} {% url 'movies:paginator' page_obj.next_page_number %} {% else %} # {% endif %}>Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            {% endif %}
+                     {% endif %}
+                 </div>

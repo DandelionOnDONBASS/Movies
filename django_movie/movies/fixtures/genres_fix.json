@@ -1,0 +1,1 @@
+[{"model": "movies.genre", "pk": 1, "fields": {"name": "Комедия", "description": "комедии/mnt/E2C23711C236EA05/dm_rest", "url": "comedy"}}, {"model": "movies.genre", "pk": 2, "fields": {"name": "Боевик", "description": "боевики", "url": "action_film"}}]
