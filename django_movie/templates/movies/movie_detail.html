@@ -56,9 +56,7 @@
                                     {% endfor %}
                                 </span></li>
                                 <li style="list-style: none"><span><b>{% trans "Жанр" %}:</b>
-                                    {% for genre in movie.genres.all %}
-                                        {{ genre.name }}
-                                    {% endfor %}
+                                    {{ movie.genres.all|join:", " }}
                                 </span>
                                 </li>
                                 <li style="list-style: none"><span><b>{% trans "Премьера в мире" %}:</b>{{ movie.world_premiere }}</span>

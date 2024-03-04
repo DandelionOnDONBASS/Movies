@@ -45,6 +45,7 @@ class MovieAdmin(TranslationAdmin):
     save_on_top = True
     save_as = True
     list_editable = ('draft',)
+    filter_horizontal = ('genres',)
     fields = ( 'title','trailer', ('tagline', 'description'), ('poster','year','country'), ('directors', 'actors', 'genres'),
                ('world_premiere','budget','fees_in_usa','fees_in_world'), 'category', 'url','draft')
 

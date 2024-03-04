@@ -169,3 +169,5 @@ class ContactView(View):
         contact = Contact.objects.update_or_create(email = request.POST.get('Email'))
         return redirect(request.META.get('HTTP_REFERER', '/'))
         
+
+

@@ -13,7 +13,14 @@
                         <label for="drop" class="toggle">Menu</label>
                         <input type="checkbox" id="drop">
                         <ul class="menu mt-2">
-                            <li>
+                           
+                                {% if user.is_staff %}
+                                    <form action="{% url 'movies:genges_add' %}" method="post">
+                                        {% csrf_token %}
+                                        <input type="submit" value="Run Genres Add">
+                                    </form>
+                                {% endif %}
+                                <li>
                     <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
                         <input name="next" type="hidden" value="{{ language.code }}/{{ request.get_full_path|slice:'4:' }}">
                         <select name="language">

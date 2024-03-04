@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .load_films_data import Genres_add
 
 app_name = 'movies'
 
@@ -16,4 +17,5 @@ urlpatterns = [
     path('review/<int:pk>/', views.AddReview.as_view(), name='add_review'),
     path('actor/<str:slug>/', views.ActorVew.as_view(), name='actor_detail'),
     path('contact', views.ContactView.as_view(), name='contact'),   
+    path('/genres_add', Genres_add, name='genges_add'),
 ]
